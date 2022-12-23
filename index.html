@@ -10,38 +10,77 @@
     <body>
 
     <div class="begingName">Weather forecast</div>
+
     <!--first block-->
         <div class="conic conic-demo">
             <div class="widget">
+                <div class="inputBox">
+                <input type="text" class="input">
+                <button class="buttonSearch"><img id="searchIcon" src="img/search-icon.png" alt="icon-search"></button>
+                </div>
                 <div class="header">
                 <img class="locationLogo" src="img/logo.png" alt="locationLogo">
+                    <div id="cityDateBox">
                 <div class="city"></div>
                     <div class="date"></div>
+                    </div>
                 </div>
-                <div class="firstBlock">
-                            <div class="title">Wind:
-                            <div class="value"><span id="wind">  </span>km/h</div>
-                            </div>
 
-                        <div class="weather-clouds">clouds</div>
-                        <div class="weather-container">
-                            <div class="weather-item">4</div>
-                            <div class="weatherTempRow">
-                                <div class="units">
-                                    <span id="celsiusBtn" class="selected">C</span>
-                                    <span id="fahrenheitBtn">F</span>
-                                </div>
+                <div class="firstBlock">
+
+                    <div id="windClouds">
+                            <div class="title">wind:
+                            <div class="value"><span id="wind">1.96</span>km/h</div>
                             </div>
+                        <div class="humidity">humidity:
+                        <div class="valueHumidity"><span id="hume">88</span>%</div></div>
+                    <div class="description"></div>
+
+                    </div>
+                      <div id="cloudsTemp">
+                        <div class="weather-clouds"></div>
+                          <div class="imgWeather1"></div>
+
 
                         </div>
+                    <div class="weather-container">
+                        <div class="weather-item"></div>
+                        <div class="weatherTempRow">
+                            <div class="units">
+                                <span id="celsiusBtn">C</span>
+                                <span id="fahrenheitBtn"></span>
+                            </div>
+                        </div>
                     </div>
-                <div class="description"></div>
+                    </div>
+
 
             </div>
 
         </div>
+
+    <div class="blockWeek">
+        <div class="dayFirst">
+            <div class="firstWeekDay">Monday</div>
+            <div class="firstDegree">5 </div>
+            <div class="firstWeather-clouds"></div>
         </div>
-<!--    second block-->
+        <div class="daySecond">
+            <div class="secondWeekDay">Tuesday</div>
+            <div class="secondDegree">5</div>
+            <div class="secondWeather-clouds"></div>
+        </div>
+        <div class="dayThird">
+            <div class="thirdWeekDay">Wednesday</div>
+            <div class="thirdDegree">5</div>
+            <div class="thirdWeather-clouds"></div>
+        </div>
+        <div class="dayForth">
+            <div class="forthWeekDay">Thursday</div>
+            <div class="forthDegree">5</div>
+            <div class="forthWeather-clouds"></div>
+        </div>
+    </div>
     <script src="main.js"></script>
     </body>
 </html>
