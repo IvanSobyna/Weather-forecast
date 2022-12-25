@@ -8,14 +8,12 @@
         <link rel="stylesheet" href="style.css" />
             </head>
     <body>
-
-    <div class="begingName">Weather forecast</div>
-
-    <!--first block-->
+    <img class="weatherIcon" src="" alt="icon">
+    <div class="begingName"></div>
         <div class="conic conic-demo">
             <div class="widget">
                 <div class="inputBox">
-                <input type="text" class="input">
+                <input type="text" class="input" placeholder="Your city">
                 <button class="buttonSearch"><img id="searchIcon" src="img/search-icon.png" alt="icon-search"></button>
                 </div>
                 <div class="header">
@@ -29,55 +27,45 @@
                 <div class="firstBlock">
 
                     <div id="windClouds">
-                            <div class="title">wind:
-                            <div class="value"><span id="wind">1.96</span>km/h</div>
+                            <div class="title">
+                            <div class="value"><span id="wind"></span></div>
                             </div>
-                        <div class="humidity">humidity:
-                        <div class="valueHumidity"><span id="hume">88</span>%</div></div>
+                        <div class="humidity">
+                        <div class="valueHumidity"></div></div>
+                        <div class="feelsLike"></div>
                     <div class="description"></div>
-
                     </div>
                       <div id="cloudsTemp">
                         <div class="weather-clouds"></div>
                           <div class="imgWeather1"></div>
-
-
                         </div>
                     <div class="weather-container">
                         <div class="weather-item"></div>
                         <div class="weatherTempRow">
-                            <div class="units">
-                                <span id="celsiusBtn">C</span>
-                                <span id="fahrenheitBtn"></span>
-                            </div>
                         </div>
                     </div>
                     </div>
-
-
             </div>
-
         </div>
-
     <div class="blockWeek">
-        <div class="dayFirst">
-            <div class="firstWeekDay">Monday</div>
-            <div class="firstDegree">5 </div>
+        <div class="days-info">
+            <div class="firstWeekDay"></div>
+            <div class="firstDegree"></div>
             <div class="firstWeather-clouds"></div>
         </div>
-        <div class="daySecond">
-            <div class="secondWeekDay">Tuesday</div>
-            <div class="secondDegree">5</div>
+        <div class="days-info">
+            <div class="secondWeekDay"></div>
+            <div class="secondDegree"></div>
             <div class="secondWeather-clouds"></div>
         </div>
-        <div class="dayThird">
-            <div class="thirdWeekDay">Wednesday</div>
-            <div class="thirdDegree">5</div>
+        <div class="days-info">
+            <div class="thirdWeekDay"></div>
+            <div class="thirdDegree"></div>
             <div class="thirdWeather-clouds"></div>
         </div>
-        <div class="dayForth">
-            <div class="forthWeekDay">Thursday</div>
-            <div class="forthDegree">5</div>
+        <div class="days-info">
+            <div class="forthWeekDay"></div>
+            <div class="forthDegree"></div>
             <div class="forthWeather-clouds"></div>
         </div>
     </div>

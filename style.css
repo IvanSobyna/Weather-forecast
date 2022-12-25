@@ -3,9 +3,20 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, black, lightslategrey);
+  /*background-image: url("img/weatherIcon.webp");*/
 flex-direction: column;
+}
+.clear{
+  background-image: url("img/sunIcon.webp");
+  background-size: 100%;
+}
+.clouds{
+  background-image: url("img/weatherIcon.webp");
+  background-size: 100%;
+}
 
+.weatherIcon{
+  background-size: 100%;
 }
 *,
 *::before,
@@ -114,6 +125,12 @@ display: flex;
   font-stretch: semi-expanded;
   align-items: center;
   letter-spacing: 2px;
+}
+.value{
+  width: 140px;
+}
+.feelsLike{
+  font-size: 21px;
 }
 .humidity {
   font-size: 18px;
@@ -263,7 +280,7 @@ display: flex;
   background-color: black;
   font-size: 22px;
 }
-.dayForth{
+.days-info{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -273,4 +290,43 @@ display: flex;
   width: 24%;
   background-color: black;
   font-size: 22px;
+}
+.firstWeather-clouds{
+ margin-bottom: -40px;
+}
+.firstDegree{
+  margin-bottom: -42%;
+}
+.secondDegree{
+  margin-bottom: -42%;
+}
+.thirdDegree{
+  margin-bottom: -42%;
+}
+.forthDegree{
+  margin-bottom: -42%;
+}
+/*.secondWeather-clouds{*/
+/*  margin-bottom: -56%;*/
+/*}*/
+.thirdWeather-clouds{
+  margin-bottom: -45px;
+}
+.forthWeather-clouds{
+  margin-bottom: -40px;
+}
+.firstDegree{
+  margin-bottom: -32px;
+}
+.secondDegree{
+  margin-bottom: -32px;
+}
+.secondWeather-clouds{
+  margin-bottom: -42px;
+}
+.thirdDegree{
+  margin-bottom: -32px;
+}
+.forthDegree{
+  margin-bottom: -32px;
 }
