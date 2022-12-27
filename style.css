@@ -3,8 +3,9 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  /*background-image: url("img/weatherIcon.webp");*/
 flex-direction: column;
+  background-size: 100%;
+  background-image: url("img/sunIcon.webp");
 }
 .clear{
   background-image: url("img/sunIcon.webp");

@@ -1,5 +1,4 @@
 
-let apiKey = "343d33d71141f1623d91c8c8aab91982";
 let lat = 50.4333;
 let lon = 30.5167;
 let cityName = document.querySelector(".city");
@@ -11,10 +10,9 @@ let humidity = document.querySelector("#hume");
 let date = document.querySelector(".date");
 let input = document.querySelector(".input");
 let buttonSearch = document.querySelector(".buttonSearch");
-let weatherIcon = document.querySelector(".weatherIcon")
+
 let meteorSituation;
 
-let imgWeather1 = document.querySelector(".imgWeather1");
 let city = "Kyiv";
 let feelsLike = document.querySelector(".feelsLike");
 
@@ -32,6 +30,7 @@ let firstDegree = document.querySelector(".firstDegree");
 let secondDegree = document.querySelector(".secondDegree");
 let thirdDegree = document.querySelector(".thirdDegree");
 let forthDegree = document.querySelector(".forthDegree");
+let body = document.querySelector("body");
 
 let dates = new Date();
 let nextWeekNames = dates.getUTCDay();
@@ -68,12 +67,12 @@ switch (nextWeekNames) {
         firstWeekDay.textContent = "Friday"
         secondWeekDay.textContent = "Saturday"
         thirdWeekDay.textContent = "Sunday"
-        forthWeekDay.textContent = "MMonday"
+        forthWeekDay.textContent = "Monday"
         break;
 
     case 5:
-        firstWeekDay.textContent = "SSaturday"
-        secondWeekDay.textContent = "SSunday"
+        firstWeekDay.textContent = "Saturday"
+        secondWeekDay.textContent = "Sunday"
         thirdWeekDay.textContent = "Monday"
         forthWeekDay.textContent = "Tuesday"
         break;
@@ -86,6 +85,7 @@ switch (nextWeekNames) {
         break;
 
 };
+
 let now = new Date().toLocaleDateString();
 date.innerHTML = (now);
 
@@ -102,14 +102,14 @@ buttonSearch.addEventListener("click", function(){
     showWeather(city)
 })
 
-function showWeather(e) {
+function showWeather() {
     let url = "https://api.openweathermap.org/data/2.5/weather?q=" + `${city}` + "&appid=75e8a972695b454279faf26b7898bfe6";
     fetch(url)
         .then((response) => response.json())
         .then(json => {
             lat = json.coord.lat;
             lon = json.coord.lon;
-            weatherClouds.innerHTML = '<img src ="http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png" alt ="icon"/>';
+            weatherClouds.innerHTML = '<img src ="https://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png" alt ="icon"/>';
             cityName.innerHTML = json.name;
             cityWeather.innerHTML = Math.round(json.main.temp - 272) + '&degC';
             feelsLike.innerHTML = 'Feels likes ' + Math.round(json.main.feels_like - 272) + '&degC';
@@ -117,37 +117,73 @@ function showWeather(e) {
             wind.innerHTML = 'Wind:' + json.wind.speed + ' m/s';
             humidity.innerHTML = json.main.humidity + ' %';
             meteorSituation = json.weather[0].main;
-            if (meteorSituation === 'Rain') {
-                weatherIcon.src = `img/rainyIcon.jpeg`;
+            if (meteorSituation === "Rain") {
+                body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                document.body.classList.add("clouds");
             }
-            if (meteorSituation === 'Clear') {
-                weatherIcon.src = `img/sunIcon.webp`;
-                document.body.classList.add(".clear");
+            if (meteorSituation === "Clear") {
+                body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                document.body.classList.add("clouds");
             }
-            if (meteorSituation === 'Snow') {
-                weatherIcon.src = `img/snowIcon.jpeg`;
-            }
-            if (meteorSituation === 'Clouds') {
-                weatherIcon.src = `img/weatherIcon.webp`;
-                document.body.classList.add(".clouds");
-            }
-        })
-            let url1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric`;
-            fetch(url1)
-                .then(response => response.json())
-                .then(json => {
-                        firstWeather.innerHTML = '<img src ="http://openweathermap.org/img/wn/' + json.daily[1].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
-                        firstDegree.innerHTML = Math.round(json.daily[1].temp.day) + "&#176";
-                        secondWeather.innerHTML = '<img src ="http://openweathermap.org/img/wn/' + json.daily[2].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
-                        secondDegree.innerHTML = Math.round(json.daily[2].temp.day) + "&#176";
-                        thirdWeather.innerHTML = '<img src ="http://openweathermap.org/img/wn/' + json.daily[3].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
-                        thirdDegree.innerHTML = Math.round(json.daily[3].temp.day) + "&#176";
-                        forthWeather.innerHTML = '<img src ="http://openweathermap.org/img/wn/' + json.daily[4].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
-                        forthDegree.innerHTML = Math.round(json.daily[4].temp.day) + "&#176";
-                    }
-                )}
+            if (meteorSituation === "Snow") {
+                body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                document.body.classList.add("clouds");
 
-showWeather();
+            }
+            if (meteorSituation === "Clouds") {
+                body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                document.body.classList.add("clouds");
+            }
+            switch (json.weather[0].main) {
+                case "Clear":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+                case "Clouds":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+                case "Drizzle":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+                case "Rain":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+                case "Thunderstorm":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+                case "Snow":
+                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
+                    document.body.classList.add("clouds");
+                    break;
+            }
+
+        })
+
+            let url1 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + `${lat}` + "&lon=" + `${lon}` + "&exclude=current,minutely,hourly&appid=343d33d71141f1623d91c8c8aab91982&units=metric";
+            fetch(url1)
+                .then((response) => response.json())
+                .then(json => {
+                        firstWeather.innerHTML = '<img src ="https://openweathermap.org/img/wn/' + json.daily[1].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
+                        firstDegree.innerHTML = Math.round(json.daily[1].temp.day) + `℃`;
+                        secondWeather.innerHTML = '<img src ="https://openweathermap.org/img/wn/' + json.daily[2].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
+                        secondDegree.innerHTML = Math.round(json.daily[2].temp.day) + `℃`;
+                        thirdWeather.innerHTML = '<img src ="https://openweathermap.org/img/wn/' + json.daily[3].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
+                        thirdDegree.innerHTML = Math.round(json.daily[3].temp.day) + `℃`;
+                        forthWeather.innerHTML = '<img src ="https://openweathermap.org/img/wn/' + json.daily[4].weather[0]['icon'] + '@2x.png" alt ="icon"/>'
+                        forthDegree.innerHTML = Math.round(json.daily[4].temp.day) + `℃`;
+
+                    }
+
+                )
+
+}
+showWeather()
+
+
 
 
 
