@@ -5,7 +5,7 @@ body {
   height: 100vh;
 flex-direction: column;
   background-size: 100%;
-  background-image: url("img/sunIcon.webp");
+  /*background-image: url("img/sunIcon.webp");*/
 }
 .clear{
   background-image: url("img/sunIcon.webp");
@@ -15,7 +15,14 @@ flex-direction: column;
   background-image: url("img/weatherIcon.webp");
   background-size: 100%;
 }
-
+.rain{
+  background-image: url("img/rainyIcon.jpeg");
+  background-size: 100%;
+}
+.snow{
+  background-image: url("img/snowIcon.jpeg");
+  background-size: 100%;
+}
 .weatherIcon{
   background-size: 100%;
 }
@@ -133,13 +140,9 @@ display: flex;
 .feelsLike{
   font-size: 21px;
 }
-.humidity {
-  font-size: 18px;
-  display: flex;
-  flex-direction: row;
-  font-stretch: semi-expanded;
-  align-items: center;
-  letter-spacing: 2px;
+#hume{
+  font-size: 21px;
+
 }
 .weather-container{
   display: flex;
@@ -255,9 +258,10 @@ display: flex;
   justify-content: space-evenly;
   color: white;
   border: 4px solid #1a232a;
-  width: 24%;
+  width: 120px;
   background-color: black;
   font-size: 22px;
+  min-width: 24%;
 }
 .daySecond{
   display: flex;

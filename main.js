@@ -11,7 +11,6 @@ let date = document.querySelector(".date");
 let input = document.querySelector(".input");
 let buttonSearch = document.querySelector(".buttonSearch");
 
-let meteorSituation;
 
 let city = "Kyiv";
 let feelsLike = document.querySelector(".feelsLike");
@@ -115,29 +114,12 @@ function showWeather() {
             feelsLike.innerHTML = 'Feels likes ' + Math.round(json.main.feels_like - 272) + '&degC';
             description.innerHTML = json.weather[0].description;
             wind.innerHTML = 'Wind:' + json.wind.speed + ' m/s';
-            humidity.innerHTML = json.main.humidity + ' %';
-            meteorSituation = json.weather[0].main;
-            if (meteorSituation === "Rain") {
-                body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                document.body.classList.add("clouds");
-            }
-            if (meteorSituation === "Clear") {
-                body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                document.body.classList.add("clouds");
-            }
-            if (meteorSituation === "Snow") {
-                body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                document.body.classList.add("clouds");
+            humidity.innerHTML = 'Humidity: ' + json.main.humidity + ' %';
 
-            }
-            if (meteorSituation === "Clouds") {
-                body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                document.body.classList.add("clouds");
-            }
             switch (json.weather[0].main) {
                 case "Clear":
-                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                    document.body.classList.add("clouds");
+                    body.style.backgroundImage = "url(img/sunIcon.webp)";
+                    document.body.classList.add("clear");
                     break;
                 case "Clouds":
                     body.style.backgroundImage = "url(img/weatherIcon.webp)";
@@ -148,16 +130,16 @@ function showWeather() {
                     document.body.classList.add("clouds");
                     break;
                 case "Rain":
-                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                    document.body.classList.add("clouds");
+                    body.style.backgroundImage = "url(img/rainyIcon.jpeg)";
+                    document.body.classList.add("rain");
                     break;
                 case "Thunderstorm":
                     body.style.backgroundImage = "url(img/weatherIcon.webp)";
                     document.body.classList.add("clouds");
                     break;
                 case "Snow":
-                    body.style.backgroundImage = "url(img/weatherIcon.webp)";
-                    document.body.classList.add("clouds");
+                    body.style.backgroundImage = "url(img/snowIcon.jpeg)";
+                    document.body.classList.add("snow");
                     break;
             }
 
